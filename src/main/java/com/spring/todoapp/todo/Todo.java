@@ -1,8 +1,15 @@
 package com.spring.todoapp.todo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 
+@Entity
 public class Todo {
+    @Id
+    @GeneratedValue
     private int id;
     private String userName;
     private String description;

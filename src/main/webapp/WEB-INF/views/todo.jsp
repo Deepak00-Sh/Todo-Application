@@ -9,7 +9,7 @@
 <div class="container">
 <h1>Enter todo details</h1>
 <form method="post">
-Description  <input type="text" placeholder="todo description"/>
+Description  <input type="text" name="description" placeholder="todo description"/>
 <input type="submit" class="btn btn-success" />
 </form>
 </div>
