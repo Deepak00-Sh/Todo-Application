@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 @Service
 public class TodoService {
@@ -15,7 +16,7 @@ public class TodoService {
     static {
         todos.add(new Todo(++todosCount,"Deepak","Learn AWS", LocalDate.now().plusYears(1),false));
         todos.add(new Todo(++todosCount,"Deepak","Learn Azure", LocalDate.now().plusYears(1),false));
-        todos.add(new Todo(++todosCount,"Deepak","Learn Springboot", LocalDate.now().plusYears(1),true));
+        todos.add(new Todo(++todosCount,"Deepak","Learn Springboot", LocalDate.now().plusYears(1),false));
     }
     public void addTodo(String userName, String description, LocalDate targetDate, boolean isDone){
         Todo todo = new Todo(++todosCount,userName, description, targetDate, isDone);
@@ -25,4 +26,8 @@ public class TodoService {
         return todos;
     }
 
+    public void deleteTodoById(int id){
+        Predicate<? super Todo> predicate = todo -> todo.getId() == id;
+        todos.removeIf(predicate);
+    }
 }
