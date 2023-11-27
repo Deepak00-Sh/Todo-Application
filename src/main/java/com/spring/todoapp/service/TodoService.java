@@ -4,15 +4,15 @@ import com.spring.todoapp.todo.Todo;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 @Service
 public class TodoService {
     private static List<Todo> todos = new ArrayList<>();
-
     private static int todosCount = 0;
+
     static {
         todos.add(new Todo(++todosCount,"Deepak","Learn AWS", LocalDate.now().plusYears(1),false));
         todos.add(new Todo(++todosCount,"Deepak","Learn Azure", LocalDate.now().plusYears(1),false));
@@ -29,5 +29,26 @@ public class TodoService {
     public void deleteTodoById(int id){
         Predicate<? super Todo> predicate = todo -> todo.getId() == id;
         todos.removeIf(predicate);
+        todosCount = todosCount -1;
+    }
+
+    public Todo findById(int id) {
+        Predicate<? super Todo> predicate = todo -> todo.getId() == id;
+        return todos.stream().filter(predicate).findFirst().get();
+    }
+
+    public void updateById(int id, String description){
+        Todo todo = findById(id);
+        deleteTodoById(id);
+        todo.setDescription(description);
+        todos.add(todo);
+        Collections.sort(todos,new SortTodosById());
+    }
+
+}
+class SortTodosById implements Comparator<Todo>{
+    @Override
+    public int compare(Todo o1, Todo o2) {
+        return o1.getId() - o2.getId();
     }
 }
