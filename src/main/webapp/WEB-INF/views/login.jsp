@@ -4,9 +4,9 @@
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="login.css" rel="stylesheet"/>
 </head>
-<body
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
+<body style="background:rgba(0,0,0,0.5);">
+<section class="vh-50 gradient-custom" style="background:blue;">
+  <div class="container py-2 h-50">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem;">
@@ -27,7 +27,7 @@
                 <label class="form-label" for="typePasswordX">Password</label>
               </div>
               <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-              <pre>${error} </pre>
+              <pre style="color: red;">${error} </pre>
             </div>
           </form>
           </div>
@@ -36,6 +36,8 @@
     </div>
   </div>
 </section>
+<br>
+<br>
 
 </div>
 <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
