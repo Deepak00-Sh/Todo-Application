@@ -14,7 +14,7 @@
           <form method="post">
             <div class="mb-md-5 mt-md-4 pb-5">
 
-              <h2 class="fw-bold mb-2 text-uppercase">Todo-Application</h2>
+              <h2 class="fw-bold mb-2 text-uppercase">TodoMinder</h2>
               <p class="text-white-50 mb-5">create your todos</p>
 
               <div class="form-outline form-white mb-4">

@@ -37,12 +37,9 @@ public class TodoService {
         return todos.stream().filter(predicate).findFirst().get();
     }
 
-    public void updateById(int id, String description){
-        Todo todo = findById(id);
-        deleteTodoById(id);
-        todo.setDescription(description);
-        todos.add(todo);
-        Collections.sort(todos,new SortTodosById());
+    public void updateById(Todo todo, String description,LocalDate targetDate){
+        deleteTodoById(todo.getId());
+        addTodo(todo.getUserName(),todo.getDescription(),todo.getTargetDate(),false);
     }
 
 }
