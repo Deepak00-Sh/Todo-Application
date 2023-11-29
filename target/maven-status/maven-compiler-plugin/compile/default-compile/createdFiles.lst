@@ -1,0 +1,9 @@
+com\spring\todoapp\controllers\HelloController.class
+com\spring\todoapp\controllers\TodoController.class
+com\spring\todoapp\service\AuthenticationService.class
+com\spring\todoapp\TodoappApplication.class
+com\spring\todoapp\controllers\LoginController.class
+com\spring\todoapp\controllers\TodoControllerJpa.class
+com\spring\todoapp\repositories\TodoRepository.class
+com\spring\todoapp\service\TodoService.class
+com\spring\todoapp\todo\Todo.class
