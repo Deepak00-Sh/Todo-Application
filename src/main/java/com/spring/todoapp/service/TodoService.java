@@ -23,7 +23,8 @@ public class TodoService {
         todos.add(todo);
     }
     public List<Todo> findByUserName(String userName){
-        return todos;
+        Predicate<? super Todo> predicate = todo -> todo.getUserName().equalsIgnoreCase(userName);
+        return todos.stream().filter(predicate).toList();
     }
 
     public void deleteTodoById(int id){
